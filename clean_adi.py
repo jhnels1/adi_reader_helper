@@ -48,7 +48,7 @@ def df_from_file( fpath ):
             temp_dict["UnixTime"]=list()
 
         temp_dict[chan] = list()
-        y = f.get_channel_by_name(chan)
+        y = f.get_channel_by_name(chan, partial_match=False)
         for j in range(Nrecord):
             try:
                 t, data = y.get_data(j+1,return_time=True)
